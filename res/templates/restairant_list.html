@@ -1,0 +1,9 @@
+<h2>Available Restaurants</h2>
+<ul>
+  {% for restaurant in restaurants %}
+    <li>
+      <a href="{% url 'restaurant-menu' restaurant.id %}">{{ restaurant.name }}</a>
+    </li>
+  {% endfor %}
+</ul>
+<p><a href="{% url 'home' %}">Back to Home</a></p>

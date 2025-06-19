@@ -1,0 +1,10 @@
+<h2>Your Cart</h2>
+<ul>
+  {% for item in items %}
+    <li>{{ item.menu_item.name }} × {{ item.quantity }}</li>
+  {% endfor %}
+</ul>
+<form action="{% url 'place-order' %}" method="post">
+  {% csrf_token %}
+  <button type="submit">Place Order</button>
+</form>
